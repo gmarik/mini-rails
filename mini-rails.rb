@@ -9,11 +9,10 @@ require 'action_controller/railtie'
 module MiniRails
   class App < Rails::Application; end
   App.config.secret_token = '!*#&$' * 31
-end
 
-
-MiniRails::App.routes.draw do
-  get '/ping', :to => 'ping#ping'
+  App.routes.draw do
+    get '/ping', :to => 'ping#ping'
+  end
 end
 
 class PingController < ActionController::Base
@@ -21,7 +20,6 @@ class PingController < ActionController::Base
     render :text => 'pong'
   end
 end
-
 
 if $0 == __FILE__
 
