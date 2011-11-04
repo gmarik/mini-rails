@@ -37,6 +37,10 @@ module MiniRails
       match '/pung' do
         "Hello, World!"
       end
+
+      get '/pxng' do
+        "Hello, World!"
+      end
     end
   end
 
@@ -82,6 +86,12 @@ module MiniRails
     end
     def test_pung
       get '/pung'
+      assert last_response.ok?, "response ok"
+      assert_equal 'Hello, World!', last_response.body, "body contains hello, world!"
+    end
+
+    def test_pxng
+      get '/pxng'
       assert last_response.ok?, "response ok"
       assert_equal 'Hello, World!', last_response.body, "body contains hello, world!"
     end
