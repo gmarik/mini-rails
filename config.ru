@@ -1,3 +1,3 @@
-require File.expand_path '../mini-rails', __FILE__
+require './mini-rails'
 
 run MiniRails::App
