@@ -25,6 +25,10 @@
   [ ] long connections
   [ ] large non-blocking fileuploads
 
+## Example Ideas
+
+...
+
 ## Run it
 
 - `cd mini-rails; rackup`

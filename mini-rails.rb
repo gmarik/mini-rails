@@ -96,5 +96,4 @@ module MiniRails
       assert_equal 'Hello, World!', last_response.body, "body contains hello, world!"
     end
   end
-
 end
