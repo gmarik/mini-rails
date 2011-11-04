@@ -1,6 +1,5 @@
 require 'bundler'
 Bundler.require(:default)
-
 require 'action_controller/railtie'
 # require 'action_mailer/railtie'
 # require 'active_resource/railtie'
@@ -13,14 +12,31 @@ module Apple
   end
 end
 
+
+module Haxor
+  def match(path,options=nil,&blk)
+    puts "somethihng"
+    if blk
+      options ||= {}
+      options[:to] ||= proc { [200,{'content-type' => 'text/html'},[blk.call]] }
+    end
+    super(path,options)
+  end
+end
+
+ActionDispatch::Routing::Mapper.send(:include, Haxor)
+
 module MiniRails
   class App < Rails::Application; end
     App.config.secret_token = '!*#&$' * 31
 
     App.routes.draw do
       get '/ping',   :to  => 'ping#ping'
-      match '/pang' => Apple
-      match '/pzng' => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
+      match '/pang', :to => Apple
+      match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
+      match '/pung' do
+        "Hello, World!"
+      end
     end
   end
 
@@ -61,6 +77,11 @@ module MiniRails
 
     def test_pzng
       get '/pzng'
+      assert last_response.ok?, "response ok"
+      assert_equal 'Hello, World!', last_response.body, "body contains hello, world!"
+    end
+    def test_pung
+      get '/pung'
       assert last_response.ok?, "response ok"
       assert_equal 'Hello, World!', last_response.body, "body contains hello, world!"
     end
