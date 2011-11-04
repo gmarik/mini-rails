@@ -19,6 +19,12 @@
 [ ] Example App, 1 branch per refactor
 [ ] Encourage fast tests
 
+## Future
+
+[ ] Async
+  [ ] long connections
+  [ ] large non-blocking fileuploads
+
 ## Run it
 
 - `cd mini-rails; rackup`
