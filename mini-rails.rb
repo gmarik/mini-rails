@@ -23,17 +23,21 @@ end
 
 if $0 == __FILE__
 
-require 'test/unit'
+Bundler.require(:test)
+
+require 'minitest/autorun'
+require 'minitest/spec'
 require 'rack/test'
 
-class HomepageTest < Test::Unit::TestCase
+
+describe MiniRails do
   include Rack::Test::Methods
 
   def app
     MiniRails::App
   end
 
-  def test_ping_pong
+  it 'responds' do
     get '/ping'
     assert               last_response.ok?
     assert_equal 'pong', last_response.body
