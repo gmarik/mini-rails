@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require(:default)
+require 'bundler/setup'
 
 require 'action_controller/railtie'
 # require 'action_mailer/railtie'
@@ -22,8 +22,6 @@ class PingController < ActionController::Base
 end
 
 if $0 == __FILE__
-
-# Bundler.require(:default, :test)
 
 require 'test/unit'
 require 'rack/test'
