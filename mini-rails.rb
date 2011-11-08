@@ -11,7 +11,7 @@ module MiniRails
   App.config.secret_token = '!*#&$' * 31
 
   App.routes.draw do
-    get '/ping', :to => 'ping#ping'
+    get '/ping', to: 'ping#ping'
   end
 end
 
