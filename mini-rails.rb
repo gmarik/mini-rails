@@ -11,20 +11,21 @@ module Apple
     [200,{'content-type' => 'text/html'},["Hello, World!"]]
   end
 end
-
-
-module Haxor
-  def match(path,options=nil,&blk)
-    puts "somethihng"
-    if blk
-      options ||= {}
-      options[:to] ||= proc { [200,{'content-type' => 'text/html'},[blk.call]] }
+module MiniRails
+  module Routing
+    module MapperExtensions
+      def match(path,options=nil,&blk)
+        if blk
+          options ||= {}
+          options[:to] ||= proc { [200,{'content-type' => 'text/html'},[blk.call]] }
+        end
+        super(path,options)
+      end
     end
-    super(path,options)
   end
 end
 
-ActionDispatch::Routing::Mapper.send(:include, Haxor)
+ActionDispatch::Routing::Mapper.send(:include, MiniRails::Routing::MapperExtensions)
 
 module MiniRails
   class App < Rails::Application; end
