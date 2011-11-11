@@ -14,7 +14,6 @@ module Rails::Mini
 #
   class PingController < ActionController::Base
     def ping
-      puts :omg
       render text: 'pong'
     end
     def pang
@@ -29,11 +28,10 @@ module Rails::Mini
     match '/pang', :to => Apple
     match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
     match '/pung' do
-      "Hello, World!"
+      render text: "Hello, World!"
     end
-
     get '/pxng' do
-      "Hello, World!"
+      render text: "Hello, World!"
     end
 
     get '/ptng' do
@@ -81,7 +79,7 @@ describe Rails::Mini::App do
       last_response.body.should == 'Hello, World!'
     end
 
-    xit 'test_ptng' do
+    it 'renders' do
       get '/ptng'
       last_response.should be_ok
       last_response.body.should == 'Hello, World!'
