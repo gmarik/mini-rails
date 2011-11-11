@@ -8,44 +8,32 @@ module Apple
   end
 end
 
-module Rails::Mini
-  class App < Rails::Application; end
-  App.config.secret_token = '!*#&$' * 31
-#
+App = Rails.app do
   class PingController < ActionController::Base
     def ping
       render text: 'pong'
     end
-    def pang
-      render text: 'Hello, World!'
-    end
   end
 
-  App.routes.draw do
-    scope module: 'Rails::Mini'  do
-      get '/ping',   :to  => 'ping#ping'
-    end
-    match '/pang', :to => Apple
-    match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
-    match '/pung' do
-      render text: "Hello, World!"
-    end
-    get '/pxng' do
-      render text: "Hello, World!"
-    end
-
-    get '/ptng' do
-      render text: "Hello, World!"
-    end
+  get '/ping',   :to  => 'ping#ping'
+  match '/pang', :to => Apple
+  match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
+  match '/pung' do
+    render text: "Hello, World!"
   end
-#
+  get '/pxng' do
+    render text: "Hello, World!"
+  end
+
+  get '/ptng' do
+    render text: "Hello, World!"
+  end
 end
 
-
-describe Rails::Mini::App do
+describe App do
    include Rack::Test::Methods
    def app
-     @app ||= Rails::Mini::App
+     @app ||= App
    end
 
   describe 'get' do
