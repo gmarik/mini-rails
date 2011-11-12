@@ -28,6 +28,10 @@ App = Rails.app do
   get '/ptng' do
     render text: "Hello, World!"
   end
+
+  post '/ptng' do
+    render text: "POST Hello, World!"
+  end
 end
 
 describe App do
@@ -71,6 +75,11 @@ describe App do
       get '/ptng'
       last_response.should be_ok
       last_response.body.should == 'Hello, World!'
+    end
+    it 'renders' do
+      post '/ptng'
+      last_response.should be_ok
+      last_response.body.should == 'POST Hello, World!'
     end
   end
 end
