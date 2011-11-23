@@ -1,3 +1,3 @@
-require 'rails/mini/all'
+require 'rails_mini'
 require 'rspec'
 require 'rack/test'

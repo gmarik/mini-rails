@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'rails/mini/all'
+require 'rails_mini'
 
 module Apple
   extend self
