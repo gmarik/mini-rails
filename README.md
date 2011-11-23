@@ -4,7 +4,7 @@
 
 ## Todo
 
-  [ ] Better defaults
+  [x] Better defaults
   [/] Sinatra DSL
     [X] block dsl in router
     [X] block dsl behaviours like controller action

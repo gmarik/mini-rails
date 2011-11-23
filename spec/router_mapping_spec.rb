@@ -15,12 +15,15 @@ App = Rails.app do
     end
   end
 
+  config.secret_token = '!*#&$' * 31
+
   get '/ping',   :to  => 'ping#ping'
   match '/pang', :to => Apple
   match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
   match '/pung' do
     render text: "Hello, World!"
   end
+
   get '/pxng' do
     render text: "Hello, World!"
   end

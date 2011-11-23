@@ -2,6 +2,10 @@ module Rails
   module Mini
     module Ext
       module RouterMappings
+        def config
+          Rails::Mini::Base::App.config
+        end
+
         def match(path,options=nil,&blk)
           if blk
             options ||= {}
