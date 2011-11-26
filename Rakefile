@@ -1,9 +1,10 @@
-require File.expand_path('../mini-rails', __FILE__)
+require_relative 'lib/rails_mini'
 require 'rake'
+require 'bundler/gem_tasks'
 
 require 'rspec/core/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
-MiniRails::App.load_tasks
+RailsMini::App.load_tasks
