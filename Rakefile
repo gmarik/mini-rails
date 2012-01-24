@@ -1,4 +1,4 @@
-require_relative 'lib/rails_mini'
+require './lib/rails_mini'
 require 'rake'
 require 'bundler/gem_tasks'
 

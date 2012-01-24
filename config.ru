@@ -1,3 +1,3 @@
-require './mini-rails'
+require './lib/rails_mini'
 
 run MiniRails::App

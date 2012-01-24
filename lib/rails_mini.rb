@@ -1,6 +1,6 @@
 require 'rails'
 require 'action_controller/railtie'
-require 'rails_mini/version'
+require './lib/rails_mini/version'
 
 class RailsMini
   class App < Rails::Application;end
