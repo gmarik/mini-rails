@@ -1,3 +1,4 @@
+#!/usr/bin/env bundle exec rackup
 require 'bundler'
 require 'bundler/setup'
 require 'rails_mini'
