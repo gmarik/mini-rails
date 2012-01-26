@@ -1,10 +1,8 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "rails_mini/version"
 
 Gem::Specification.new do |s|
   s.name        = "rails_mini"
-  s.version     = RailsMini::VERSION
+  s.version     = '0.0.3'
   s.authors     = ["gmarik","Stefan Penner"]
   s.email       = ["gmarik@gmail.com","stefan.penner@gmail.com"]
   s.homepage    = "http://github.com/gmarik/mini-rails"
