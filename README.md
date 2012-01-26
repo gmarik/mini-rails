@@ -32,7 +32,7 @@ run app
 
 ## Example app
 
-See [example](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb3d45c1aee01d72a0)
+See [example](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb3d45c1aee01d72a0/example)
 
 ## Todo
 
