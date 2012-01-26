@@ -1,8 +1,12 @@
 ## About
 
-Gem Rails like Sinatra
+Gem Rails like Sinatra.
 
-## Example `config.ru`
+Mini Rails tweaks Rails routing allowing defining actions in match/get blocks.
+So it's Rails but feels like Sinatra.
+
+
+## Example `[config.ru](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb3d45c1aee01d72a0)`
 ```ruby
 require './lib/rails_mini'
 
