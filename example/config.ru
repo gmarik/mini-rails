@@ -1,5 +1,6 @@
 require 'bundler'
 require 'bundler/setup'
+require 'rails_mini'
 
 app = Rails.mini do
 
