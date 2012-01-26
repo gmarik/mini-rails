@@ -2,7 +2,7 @@
 
 Gem Rails like Sinatra.
 
-Mini Rails tweaks Rails routing allowing defining actions in simples route definitions like match/get blocks.
+Mini Rails is a fun-hack that tweaks Rails routing allowing defining actions in simples route definitions like match/get blocks.
 So it's Rails but feels like Sinatra.
 
 
