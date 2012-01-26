@@ -18,22 +18,23 @@ App = Rails.app do
   config.secret_token = '!*#&$' * 31
 
   get '/ping',   :to  => 'ping#ping'
-  match '/pang', :to => Apple
-  match '/pzng', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
-  match '/pung' do
-    render text: "Hello, World!"
+  match '/rack_apple', :to => Apple
+  match '/lambda', :to => ->(hash) { [200,{'content-type' => 'text/html'},["Hello, World!"]] }
+
+  match '/match_with_block' do
+    render text: "match with block"
   end
 
-  get '/pxng' do
-    render text: "Hello, World!"
+  get '/get_with_block' do
+    render text: "get with block"
   end
 
-  get '/ptng' do
-    render text: "Hello, World!"
+  put '/ping' do
+    render text: "Put ping?"
   end
 
-  post '/ptng' do
-    render text: "POST Hello, World!"
+  post '/ping' do
+    render json: {'ping' => 'pong'}
   end
 end
 
@@ -50,39 +51,40 @@ describe App do
       last_response.body.should == 'pong'
     end
 
-    it 'test_pang' do
-      get '/pang'
+    it 'test rack app' do
+      get '/rack_apple'
       last_response.should be_ok
       last_response.body.should == 'Hello, World!'
     end
 
-    it 'test_pzng' do
-      get '/pzng'
+    it 'test_lambda_rack_app' do
+      get '/lambda'
       last_response.should be_ok
       last_response.body.should == 'Hello, World!'
     end
 
-    it 'test_pung' do
-      get '/pung'
+    it 'match_with_block' do
+      get '/match_with_block'
       last_response.should be_ok
-      last_response.body.should == 'Hello, World!'
+      last_response.body.should == 'match with block'
     end
 
-    it 'test_pxng' do
-      get '/pxng'
+    it 'test get with block' do
+      get '/get_with_block'
       last_response.should be_ok
-      last_response.body.should == 'Hello, World!'
+      last_response.body.should == 'get with block'
     end
 
-    it 'renders' do
-      get '/ptng'
+    it 'accepts put and renders' do
+      put '/ping'
       last_response.should be_ok
-      last_response.body.should == 'Hello, World!'
+      last_response.body.should == 'Put ping?'
     end
-    it 'renders' do
-      post '/ptng'
+
+    it 'accepts posts and renders json' do
+      post '/ping'
       last_response.should be_ok
-      last_response.body.should == 'POST Hello, World!'
+      last_response.body.should == %Q[{"ping":"pong"}]
     end
   end
 end
