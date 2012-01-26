@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = RailsMini::VERSION
   s.authors     = ["gmarik","Stefan Penner"]
   s.email       = ["gmarik@gmail.com","stefan.penner@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{Simple Web DSL built with rails}
-  s.description = %q{Sometimes rails feels over powering, luckily rails is quite modular. This gem provides sane defaults, with a simple, familiar and handy DSL}
+  s.homepage    = "http://github.com/gmarik/mini-rails"
+  s.summary     = %q{Use Rails like Sinatra}
+  s.description = %q{Use Rails like Sinatra}
 
   s.rubyforge_project = "rails_mini"
 
