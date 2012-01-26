@@ -1,4 +1,5 @@
-require './lib/rails_mini'
+require 'bundler'
+require 'bundler/setup'
 
 app = Rails.mini do
 

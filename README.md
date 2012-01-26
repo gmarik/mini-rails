@@ -2,7 +2,7 @@
 
 Use Rails like Sinatra
 
-## Example
+## Example `config.ru`
 ```ruby
 require './lib/rails_mini'
 
