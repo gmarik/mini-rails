@@ -34,6 +34,11 @@ run app
 
 See [example](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb3d45c1aee01d72a0/example)
 
+## Authors
+
+- [gmarik](http://github.com/gmarik)
+- [Stefan Penner](https://github.com/stefanpenner)
+
 ## Todo
 
     [x] Better defaults
@@ -46,12 +51,3 @@ See [example](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb
     [ ] real world usage
     [ ] example app
 
-## Inspiration
-
-- sinatra
-- astaire
-
-## Authors
-
-- [gmarik](http://github.com/gmarik)
-- [Stefan Penner](https://github.com/stefanpenner)
