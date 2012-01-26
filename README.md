@@ -11,7 +11,7 @@ app = Rails.mini do
   config.secret_token = '!*#&$' * 31
 
   get '/hello' do
-    render text: "Hello #{params[:who]}!"
+    render text: "Hello #{params[:to]}!"
   end
 
   get '/ping' do
