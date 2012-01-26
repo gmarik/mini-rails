@@ -17,6 +17,6 @@ end
 
 require 'rails_mini/ext'
 
-def Rails.app(&blk)
+def Rails.mini(&blk)
   RailsMini.new(&blk)
 end

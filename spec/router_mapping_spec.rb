@@ -8,7 +8,8 @@ module Apple
   end
 end
 
-App = Rails.app do
+App = Rails.mini do
+
   class PingController < ActionController::Base
     def ping
       render text: 'pong'
