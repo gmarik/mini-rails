@@ -1,6 +1,6 @@
 require './lib/rails_mini'
 
-app = Rails.app do
+app = Rails.mini do
 
   config.secret_token = '!*#&$' * 31
 
