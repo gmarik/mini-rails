@@ -6,7 +6,7 @@ Mini Rails tweaks Rails routing allowing defining actions in simples route defin
 So it's Rails but feels like Sinatra.
 
 
-## Example `[config.ru](https://github.com/gmarik/mini-rails/tree/45dcc6da8eb07fa84d57aceb3d45c1aee01d72a0)`
+## Example `config.ru`
 ```ruby
 require './lib/rails_mini'
 
