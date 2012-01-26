@@ -1,6 +1,6 @@
 ## About
 
-Use Rails like Sinatra
+Gem Rails like Sinatra
 
 ## Example `config.ru`
 ```ruby

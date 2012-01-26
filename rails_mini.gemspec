@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ["gmarik","Stefan Penner"]
   s.email       = ["gmarik@gmail.com","stefan.penner@gmail.com"]
   s.homepage    = "http://github.com/gmarik/mini-rails"
-  s.summary     = %q{Use Rails like Sinatra}
-  s.description = %q{Use Rails like Sinatra}
+  s.summary     = %q{Gem Rails like Sinatra}
+  s.description = %q{Gem Rails like Sinatra}
 
   s.rubyforge_project = "rails_mini"
 
