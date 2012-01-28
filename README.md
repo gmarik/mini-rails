@@ -34,6 +34,10 @@ run app
 
 See [example](https://github.com/gmarik/mini-rails/tree/3923fd4e79939ce0202fd88c79088c88016512e0/example)
 
+#Motivation
+Start small.
+When u ready to grow - get rid of the mini-rails.gem and continue as usual, moving methods into appropriate controllers
+
 ## Authors
 
 - [gmarik](http://github.com/gmarik)
